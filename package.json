@@ -17,7 +17,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "test:watch": "tsdx test --watch"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -33,9 +34,19 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "jest":{
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
   "name": "fg-product-card-lib",
   "author": "fgranucci_meli",
   "module": "dist/fg-product-card-lib.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/florgranucci/fg-product-card-lib"
+  },
   "size-limit": [
     {
       "path": "dist/fg-product-card-lib.cjs.production.min.js",
@@ -58,6 +69,20 @@
     "size-limit": "^11.0.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.6.2",
-    "typescript": "^3.9.10"
+    "typescript": "^3.9.10",
+    "@types/react-test-renderer": "^18.0.7"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "product",
+    "card"
+  ],
+  "dependencies": {
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-react": "^7.23.3",
+    "babel-jest": "^29.7.0",
+    "jest": "^25.5.4",
+    "react-test-renderer": "^18.2.0"
   }
 }
